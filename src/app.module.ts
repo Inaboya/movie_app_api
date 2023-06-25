@@ -7,10 +7,13 @@ import { UsersModule } from './users/users.module';
 import { MoviesController } from './movies/movies.controller';
 import { MoviesService } from './movies/movies.service';
 import { MoviesModule } from './movies/movies.module';
+import { FavoriteMoviesController } from './favorite-movies/favorite-movies.controller';
+import { FavoriteMoviesService } from './favorite-movies/favorite-movies.service';
+import { FavoriteMoviesModule } from './favorite-movies/favorite-movies.module';
 
 @Module({
-  imports: [UsersModule, MoviesModule],
-  controllers: [AppController, UsersController, MoviesController],
-  providers: [AppService, UsersService, MoviesService],
+  imports: [UsersModule, MoviesModule, FavoriteMoviesModule],
+  controllers: [AppController, UsersController, MoviesController, FavoriteMoviesController],
+  providers: [AppService, UsersService, MoviesService, FavoriteMoviesService],
 })
 export class AppModule {}
